@@ -15,6 +15,10 @@ jobs:
     steps:
       - name: Déplacer la carte dans In Progress
         run: |
+          # 0. Vérifier le jeton : affiche ses permissions ou l'erreur exacte
+          echo "Permissions du jeton :"
+          gh api -i user | grep -i '^x-oauth-scopes'
+        
           # 1. Identifiant interne du projet
           PROJECT_ID=$(gh project view "$PROJECT_NUMBER" --owner "$OWNER" --format json --jq .id)
 
