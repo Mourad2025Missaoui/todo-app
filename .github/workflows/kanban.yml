@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
-      OWNER: ${{ github.repository_owner }}
+      OWNER: "@me"
       PROJECT_NUMBER: 1          # ⚠️ remplacer par le numéro de VOTRE projet
       ISSUE_URL: ${{ github.event.issue.html_url }}
     steps:
